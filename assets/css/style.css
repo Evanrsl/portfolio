@@ -86,18 +86,6 @@ section {
 .heading span {
   color: #a5d7e8;
 }
-header .logo {
-  font-size: 1.9rem;
-  font-weight: 800;
-  text-decoration: none;
-  color: #0e2431;
-}
-header .logo i {
-  font-size: 2.2rem;
-}
-header .logo:hover {
-  color: #2e8bc0;
-}
 header .navbar ul {
   list-style: none;
   display: flex;
