@@ -16,7 +16,7 @@ $(document).ready(function () {
     $("#menu").removeClass("fa-times");
     $(".navbar").removeClass("nav-toggle");
 
-    if (window.scrollY > 60) {
+    if (window.scrollY > 100) {
       document.querySelector("#scroll-top").classList.add("active");
     } else {
       document.querySelector("#scroll-top").classList.remove("active");
@@ -29,7 +29,7 @@ $(document).ready(function () {
       let top = $(window).scrollTop();
       let id = $(this).attr("id");
 
-      if (top > offset && top < offset + height) {
+      if (top > offset + 100 && top < offset + height) {
         $(".navbar ul li a").removeClass("active");
         $(".navbar").find(`[href="#${id}"]`).addClass("active");
       }
@@ -92,7 +92,7 @@ async function fetchData(type) {
   if (type == "skills") {
     response = await fetch("skills.json");
   } else if (type == "projects") {
-    response = await fetch("./projects/projects.json");
+    response = await fetch("projects.json");
   } else {
     response = await fetch("certificates.json");
   }
@@ -121,7 +121,7 @@ function showProjects(projects) {
   projects.slice(0, 10).forEach((project) => {
     projectHTML += `
         <div class="box tilt">
-      <img draggable="false" src="/assets/images/projects/${project.image}.png" alt="project" />
+      <img draggable="false" src="./assets/images/projects/${project.image}.png" alt="project" />
       <div class="content">
         <div class="tag">
         <h3>${project.name}</h3>
